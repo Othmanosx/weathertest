@@ -12,7 +12,7 @@ code {
     monospace;
 }
 .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  place-content: center;
+  display: grid;
+  height: 100vh;
 }
