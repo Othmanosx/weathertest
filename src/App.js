@@ -8,6 +8,7 @@ export default function App() {
 
   useEffect(() => {
     dispatch(fetchUsers())
+    // eslint-disable-next-line
   }, [])
 
   return (
