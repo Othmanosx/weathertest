@@ -16,3 +16,7 @@ code {
   display: grid;
   height: 100vh;
 }
+.weather {
+  margin: 10px;
+  max-width: 10px;
+}

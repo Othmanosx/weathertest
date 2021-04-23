@@ -4,7 +4,7 @@ import { Typography, CardContent, Card } from "@material-ui/core"
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    minWidth: 200,
   },
   bullet: {
     display: "inline-block",
@@ -21,7 +21,10 @@ const useStyles = makeStyles({
 
 export default function OutlinedCard(props) {
   const classes = useStyles()
-
+  const handleDate = (date) => {
+    const event = new Date(date * 1000)
+    return event.toDateString()
+  }
   return (
     <Card className={classes.root} variant="outlined">
       <CardContent>
@@ -31,10 +34,10 @@ export default function OutlinedCard(props) {
           gutterBottom
         ></Typography>
         <Typography variant="h5" component="h2" color="secondary">
-          {props.city}, {props.country}
+          {props.status}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {props.date}
+          {handleDate(props.date)}
         </Typography>
         <Typography variant="h2" component="p">
           {props.temp}°c
