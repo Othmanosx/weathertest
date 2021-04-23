@@ -1,9 +1,10 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
-import fetchUsers from "./actions/actions"
+import { fetchF, fetchC } from "./actions/actions"
 import Weather from "./components/WeatherCard"
+import Radio from "./components/Radio"
 
 const responsive = {
   superLargeDesktop: {
@@ -29,10 +30,24 @@ export default function App() {
   const state = useSelector((state) => state)
   const dispatch = useDispatch()
 
+  const [selectedValue, setSelectedValue] = useState("a")
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value)
+  }
+
   useEffect(() => {
-    dispatch(fetchUsers())
+    switch (selectedValue) {
+      case "b":
+        dispatch(fetchC())
+        break
+      case "a":
+        dispatch(fetchF())
+        break
+    }
+
     // eslint-disable-next-line
-  }, [])
+  }, [selectedValue])
   useEffect(() => {
     // if(state.all){setdays(state.list.filter((data) => data.dt_txt.split(" ")[1] === "00:00:00"))}
     if (state) {
@@ -43,6 +58,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <Radio selectedValue={selectedValue} handleChange={handleChange} />
       {!state ? (
         <div className="loading">
           <h1>Loading...</h1>

@@ -1,6 +1,6 @@
 const userReducer = (state = { all: [], days: [] }, action) => {
   switch (action.type) {
-    case "FETCH_USERS":
+    case "FETCH":
       return {
         all: action.payload,
         days: action.payload.list.filter(
