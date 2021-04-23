@@ -26,3 +26,7 @@ code {
 .radio {
   justify-content: center;
 }
+.chart {
+  width: 80%;
+  margin: auto;
+}

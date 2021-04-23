@@ -5,6 +5,7 @@ import "react-multi-carousel/lib/styles.css"
 import { fetchF, fetchC } from "./actions/actions"
 import Weather from "./components/WeatherCard"
 import Radio from "./components/Radio"
+import Chart from "./components/Chart"
 
 const responsive = {
   superLargeDesktop: {
@@ -48,13 +49,6 @@ export default function App() {
 
     // eslint-disable-next-line
   }, [selectedValue])
-  useEffect(() => {
-    // if(state.all){setdays(state.list.filter((data) => data.dt_txt.split(" ")[1] === "00:00:00"))}
-    if (state) {
-      console.log(state)
-    }
-    // eslint-disable-next-line
-  }, [state])
 
   return (
     <div className="App">
@@ -83,6 +77,7 @@ export default function App() {
           }
         </Carousel>
       )}
+      <Chart />
     </div>
   )
 }
