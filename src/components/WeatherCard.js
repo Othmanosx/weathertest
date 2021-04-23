@@ -5,6 +5,7 @@ import { Typography, CardContent, Card } from "@material-ui/core"
 const useStyles = makeStyles({
   root: {
     minWidth: 200,
+    textAlign: "center",
   },
   bullet: {
     display: "inline-block",

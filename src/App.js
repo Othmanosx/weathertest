@@ -9,21 +9,21 @@ const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
-    items: 3
+    items: 3,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3
+    items: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 2
+    items: 2,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
+    items: 1,
+  },
+}
 
 export default function App() {
   const state = useSelector((state) => state)
@@ -35,7 +35,9 @@ export default function App() {
   }, [])
   useEffect(() => {
     // if(state.all){setdays(state.list.filter((data) => data.dt_txt.split(" ")[1] === "00:00:00"))}
-    if(state){console.log(state)}
+    if (state) {
+      console.log(state)
+    }
     // eslint-disable-next-line
   }, [state])
 
@@ -46,7 +48,7 @@ export default function App() {
           <h1>Loading...</h1>
         </div>
       ) : (
-        <Carousel responsive={responsive}>
+        <Carousel className="table" responsive={responsive}>
           {
             // eslint-disable-next-line
             state.days.map((data) => {

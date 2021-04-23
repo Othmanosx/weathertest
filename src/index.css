@@ -18,5 +18,8 @@ code {
 }
 .weather {
   margin: 10px;
-  max-width: 10px;
+}
+.table {
+  width: 80%;
+  margin: auto;
 }
