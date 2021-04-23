@@ -41,7 +41,7 @@ export default function OutlinedCard(props) {
           {handleDate(props.date)}
         </Typography>
         <Typography variant="h2" component="p">
-          {props.temp}°c
+          {props.temp} {props.selectedValue == "a" ? "°C" : "°F"}
         </Typography>
       </CardContent>
     </Card>

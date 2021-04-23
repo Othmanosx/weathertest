@@ -72,6 +72,7 @@ export default function App() {
                 return (
                   <div key={data.dt} className="weather">
                     <Weather
+                      selectedValue={selectedValue}
                       date={data.dt}
                       status={data.weather[0].main}
                       temp={Math.round(data.main.temp)}
