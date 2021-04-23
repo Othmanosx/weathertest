@@ -2,10 +2,17 @@ import React from "react"
 import { Bar } from "react-chartjs-2"
 
 const data = {
-  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  labels: [
+    "00:00 AM",
+    "03:00 AM",
+    "06:00 AM",
+    "09:00 AM",
+    "12:00 AM",
+    "15:00 AM",
+  ],
   datasets: [
     {
-      label: "# of Votes",
+      label: "Temp of the day",
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",

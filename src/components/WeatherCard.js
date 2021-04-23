@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Typography, CardContent, Card } from "@material-ui/core"
+import { Typography, CardContent, Card, Button } from "@material-ui/core"
 
 const useStyles = makeStyles({
   root: {
@@ -20,11 +20,20 @@ const useStyles = makeStyles({
   },
 })
 
-export default function OutlinedCard(props) {
+export default function OutlinedCard({
+  status,
+  date,
+  temp,
+  selectedValue,
+  passData,
+}) {
   const classes = useStyles()
   const handleDate = (date) => {
     const event = new Date(date * 1000)
     return event.toDateString()
+  }
+  const pass = () => {
+    passData(date)
   }
   return (
     <Card className={classes.root} variant="outlined">
@@ -35,14 +44,17 @@ export default function OutlinedCard(props) {
           gutterBottom
         ></Typography>
         <Typography variant="h5" component="h2" color="secondary">
-          {props.status}
+          {status}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {handleDate(props.date)}
+          {handleDate(date)}
         </Typography>
         <Typography variant="h2" component="p">
-          {props.temp} {props.selectedValue == "a" ? "°C" : "°F"}
+          {temp} {selectedValue === "a" ? "°C" : "°F"}
         </Typography>
+        <Button onClick={pass} variant="outlined" color="primary">
+          More info
+        </Button>
       </CardContent>
     </Card>
   )

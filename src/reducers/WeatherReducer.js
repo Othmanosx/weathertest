@@ -1,4 +1,5 @@
 const userReducer = (state = { all: [], days: [] }, action) => {
+  // eslint-disable-next-line
   switch (action.type) {
     case "FETCH":
       return {
