@@ -27,11 +27,19 @@ code {
   justify-content: center;
 }
 .chart {
-  width: 80%;
-  margin: auto;
+  padding-top: 2em;
+  margin: auto 10px;
+}
+@media (min-width: 798px) {
+  .chart {
+    width: 80%;
+  }
 }
 .chartText {
   place-content: center;
   display: grid;
   height: 20em;
+}
+.title {
+  text-align: center;
 }

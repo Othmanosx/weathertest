@@ -36,11 +36,12 @@ const fetchC = () => {
       })
   }
 }
-const passDayData = (data) => {
+const passDayData = (data, unit) => {
   return (dispatch) => {
     dispatch({
       type: "PASS",
       payload: data,
+      unit: unit,
     })
   }
 }

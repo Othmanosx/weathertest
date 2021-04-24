@@ -13,6 +13,7 @@ const userReducer = (state = { all: [], days: [] }, action) => {
       return {
         ...state,
         DayData: action.payload,
+        unit: action.unit,
       }
   }
 }
