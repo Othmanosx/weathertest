@@ -1,5 +1,6 @@
 import React from "react"
 import { Bar } from "react-chartjs-2"
+import { useSelector } from "react-redux"
 
 const data = {
   labels: [
@@ -47,11 +48,22 @@ const options = {
   },
 }
 
-const VerticalBar = () => (
-  <div className="chart">
-    <h1 className="title">Forecast</h1>
-    <Bar data={data} options={options} />
-  </div>
-)
+const VerticalBar = () => {
+  const DayData = useSelector((state) => state.DayData)
+  if (DayData) {
+    return (
+      <div className="chart">
+        <h1 className="title">Forecast</h1>
+        <Bar data={data} options={options} />
+      </div>
+    )
+  } else {
+    return (
+      <div className="chartText">
+        <h2>Click on MORE INFO button to view hourly forecast</h2>
+      </div>
+    )
+  }
+}
 
 export default VerticalBar

@@ -9,6 +9,11 @@ const userReducer = (state = { all: [], days: [] }, action) => {
         ),
         unit: action.unit,
       }
+    case "PASS":
+      return {
+        ...state,
+        DayData: action.payload,
+      }
   }
 }
 

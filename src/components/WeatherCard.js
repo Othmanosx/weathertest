@@ -1,6 +1,8 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Typography, CardContent, Card, Button } from "@material-ui/core"
+import { useDispatch } from "react-redux"
+import { passDayData } from "../actions/actions"
 
 const useStyles = makeStyles({
   root: {
@@ -26,8 +28,9 @@ export default function OutlinedCard({ status, date, temp, unit, passData }) {
     const event = new Date(date * 1000)
     return event.toDateString()
   }
+  const dispatch = useDispatch()
   const pass = () => {
-    passData(date)
+    dispatch(passDayData(date))
   }
   return (
     <Card className={classes.root} variant="outlined">

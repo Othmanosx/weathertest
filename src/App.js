@@ -38,9 +38,6 @@ export default function App() {
   const handleChange = (event) => {
     setSelectedValue(event.target.value)
   }
-  const passData = (date) => {
-    console.log(date)
-  }
 
   useEffect(() => {
     switch (selectedValue) {
@@ -80,7 +77,6 @@ export default function App() {
                         date={data.dt}
                         status={data.weather[0].main}
                         temp={Math.round(data.main.temp)}
-                        passData={passData}
                         unit={state.unit}
                       />
                     </div>

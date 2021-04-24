@@ -36,4 +36,12 @@ const fetchC = () => {
       })
   }
 }
-export { fetchF, fetchC }
+const passDayData = (data) => {
+  return (dispatch) => {
+    dispatch({
+      type: "PASS",
+      payload: data,
+    })
+  }
+}
+export { fetchF, fetchC, passDayData }

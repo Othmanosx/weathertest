@@ -30,3 +30,8 @@ code {
   width: 80%;
   margin: auto;
 }
+.chartText {
+  place-content: center;
+  display: grid;
+  height: 20em;
+}
