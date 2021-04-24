@@ -31,7 +31,7 @@ export default function App() {
   const state = useSelector((state) => state)
   const dispatch = useDispatch()
 
-  const [selectedValue, setSelectedValue] = useState("a")
+  const [selectedValue, setSelectedValue] = useState("b")
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value)
