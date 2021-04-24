@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import Carousel from "react-multi-carousel"
 import LinearProgress from "@material-ui/core/LinearProgress"
-
 import "react-multi-carousel/lib/styles.css"
 import { fetchF, fetchC } from "./actions/actions"
 import Weather from "./components/WeatherCard"
@@ -11,7 +10,6 @@ import Chart from "./components/Chart"
 
 const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 3,
   },
