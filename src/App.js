@@ -5,7 +5,7 @@ import LinearProgress from "@material-ui/core/LinearProgress"
 import "react-multi-carousel/lib/styles.css"
 import { fetchF, fetchC } from "./actions/actions"
 import Weather from "./components/WeatherCard"
-import Radio from "./components/Radio"
+import Radio from "./components/Radio/Radio"
 import Chart from "./components/Chart"
 
 const responsive = {
