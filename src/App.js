@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import Carousel from "react-multi-carousel"
 import LinearProgress from "@material-ui/core/LinearProgress"
+import { Typography, Box } from "@material-ui/core"
 import "react-multi-carousel/lib/styles.css"
 import { fetchF, fetchC } from "./actions/actions"
 import Weather from "./components/WeatherCard"
@@ -53,14 +54,14 @@ export default function App() {
   }, [selectedValue])
 
   return (
-    <div className="App">
+    <>
       {!state ? (
-        <div className="loading">
-          <h1>
+        <Box className="loading">
+          <Typography variant="h3">
             Loading...
             <LinearProgress color="secondary" />
-          </h1>
-        </div>
+          </Typography>
+        </Box>
       ) : (
         <>
           <Radio selectedValue={selectedValue} handleChange={handleChange} />
@@ -70,14 +71,14 @@ export default function App() {
               state.days.map((data) => {
                 if (data.dt_txt.split(" ")[1] === "00:00:00")
                   return (
-                    <div key={data.dt} className="weather">
+                    <Box key={data.dt} className="weather">
                       <Weather
                         date={data.dt}
                         status={data.weather[0].main}
                         temp={Math.round(data.main.temp)}
                         unit={state.unit}
                       />
-                    </div>
+                    </Box>
                   )
               })
             }
@@ -85,6 +86,6 @@ export default function App() {
           <Chart />
         </>
       )}
-    </div>
+    </>
   )
 }

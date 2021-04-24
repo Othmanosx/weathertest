@@ -1,5 +1,5 @@
 import React from "react"
-import { Typography } from "@material-ui/core"
+import { Typography, Box } from "@material-ui/core"
 import { Bar } from "react-chartjs-2"
 import { useSelector } from "react-redux"
 
@@ -61,20 +61,20 @@ const VerticalBar = () => {
   }
   if (state.DayData) {
     return (
-      <div className="chart">
+      <Box className="chart">
         <Typography className="title">
           Hourly forecast for {handleDate(state.DayData)}
         </Typography>
         <Bar data={data} options={options} />
-      </div>
+      </Box>
     )
   } else {
     return (
-      <div className="chartText">
+      <Box className="chartText">
         <Typography variant="h5">
           Click on MORE INFO button to view hourly forecast
         </Typography>
-      </div>
+      </Box>
     )
   }
 }
