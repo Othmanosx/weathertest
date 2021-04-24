@@ -23,7 +23,7 @@ export default function RadioComponent({ handleChange, selectedValue }) {
             inputProps={{ "aria-label": "A" }}
           />
         }
-        label="Celcius"
+        label="Celsius"
       />
       <FormControlLabel
         value="F"
