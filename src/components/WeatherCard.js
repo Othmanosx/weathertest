@@ -6,7 +6,7 @@ import { passDayData } from "../actions/actions"
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 150,
+    minWidth: 120,
     textAlign: "center",
   },
   bullet: {
@@ -46,10 +46,10 @@ export default function OutlinedCard({ status, date, temp, unit, passData }) {
         <Typography className={classes.pos} color="textSecondary">
           {handleDate(date)}
         </Typography>
-        <Typography variant="h4" component="p">
+        <Typography variant="h4">
           {temp} {unit}
         </Typography>
-        <Button onClick={pass} variant="outlined" color="primary">
+        <Button size="small" onClick={pass} variant="outlined" color="primary">
           More info
         </Button>
       </CardContent>
