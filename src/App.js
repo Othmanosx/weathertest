@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import Carousel from "react-multi-carousel"
+import LinearProgress from "@material-ui/core/LinearProgress"
+
 import "react-multi-carousel/lib/styles.css"
 import { fetchF, fetchC } from "./actions/actions"
 import Weather from "./components/WeatherCard"
@@ -57,33 +59,38 @@ export default function App() {
 
   return (
     <div className="App">
-      <Radio selectedValue={selectedValue} handleChange={handleChange} />
       {!state ? (
         <div className="loading">
-          <h1>Loading...</h1>
+          <h1>
+            Loading...
+            <LinearProgress color="secondary" />
+          </h1>
         </div>
       ) : (
-        <Carousel className="table" responsive={responsive}>
-          {
-            // eslint-disable-next-line
-            state.days.map((data) => {
-              if (data.dt_txt.split(" ")[1] === "00:00:00")
-                return (
-                  <div key={data.dt} className="weather">
-                    <Weather
-                      selectedValue={selectedValue}
-                      date={data.dt}
-                      status={data.weather[0].main}
-                      temp={Math.round(data.main.temp)}
-                      passData={passData}
-                    />
-                  </div>
-                )
-            })
-          }
-        </Carousel>
+        <>
+          <Radio selectedValue={selectedValue} handleChange={handleChange} />
+          <Carousel className="table" responsive={responsive}>
+            {
+              // eslint-disable-next-line
+              state.days.map((data) => {
+                if (data.dt_txt.split(" ")[1] === "00:00:00")
+                  return (
+                    <div key={data.dt} className="weather">
+                      <Weather
+                        date={data.dt}
+                        status={data.weather[0].main}
+                        temp={Math.round(data.main.temp)}
+                        passData={passData}
+                        unit={state.unit}
+                      />
+                    </div>
+                  )
+              })
+            }
+          </Carousel>
+          <Chart />
+        </>
       )}
-      <Chart />
     </div>
   )
 }

@@ -13,6 +13,7 @@ const fetchF = () => {
         dispatch({
           type: "FETCH",
           payload: weather.data,
+          unit: "°C",
         })
       })
   }
@@ -30,6 +31,7 @@ const fetchC = () => {
         dispatch({
           type: "FETCH",
           payload: weather.data,
+          unit: "°F",
         })
       })
   }

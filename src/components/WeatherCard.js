@@ -20,13 +20,7 @@ const useStyles = makeStyles({
   },
 })
 
-export default function OutlinedCard({
-  status,
-  date,
-  temp,
-  selectedValue,
-  passData,
-}) {
+export default function OutlinedCard({ status, date, temp, unit, passData }) {
   const classes = useStyles()
   const handleDate = (date) => {
     const event = new Date(date * 1000)
@@ -50,7 +44,7 @@ export default function OutlinedCard({
           {handleDate(date)}
         </Typography>
         <Typography variant="h2" component="p">
-          {temp} {selectedValue === "a" ? "°C" : "°F"}
+          {temp} {unit}
         </Typography>
         <Button onClick={pass} variant="outlined" color="primary">
           More info

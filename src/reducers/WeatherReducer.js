@@ -7,6 +7,7 @@ const userReducer = (state = { all: [], days: [] }, action) => {
         days: action.payload.list.filter(
           (data) => data.dt_txt.split(" ")[1] === "00:00:00"
         ),
+        unit: action.unit,
       }
   }
 }
