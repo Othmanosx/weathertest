@@ -47,7 +47,7 @@ export default function App() {
         dispatch(fetchF())
         break
       default:
-        dispatch(fetchC())
+        dispatch(fetchF())
         break
     }
     // eslint-disable-next-line
