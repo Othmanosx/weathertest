@@ -41,6 +41,8 @@ code {
   place-content: center;
   display: grid;
   height: 20em;
+  margin: 0 3em;
+  text-align: center;
 }
 .title {
   text-align: center;
