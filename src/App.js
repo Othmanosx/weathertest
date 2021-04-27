@@ -50,8 +50,7 @@ export default function App() {
         dispatch(fetchF())
         break
     }
-    // eslint-disable-next-line
-  }, [selectedValue])
+  }, [selectedValue, dispatch])
 
   return (
     <>
@@ -66,22 +65,18 @@ export default function App() {
         <>
           <Radio selectedValue={selectedValue} handleChange={handleChange} />
           <Carousel className="table" responsive={responsive}>
-            {
-              // eslint-disable-next-line
-              state.days.map((data) => {
-                if (data.dt_txt.split(" ")[1] === "00:00:00")
-                  return (
-                    <Box key={data.dt} className="weather">
-                      <Weather
-                        date={data.dt}
-                        status={data.weather[0].main}
-                        temp={Math.round(data.main.temp)}
-                        unit={state.unit}
-                      />
-                    </Box>
-                  )
-              })
-            }
+            {state.days.map((data) =>
+              data.dt_txt.split(" ")[1] === "00:00:00" ? (
+                <Box key={data.dt} className="weather">
+                  <Weather
+                    date={data.dt}
+                    status={data.weather[0].main}
+                    temp={Math.round(data.main.temp)}
+                    unit={state.unit}
+                  />
+                </Box>
+              ) : null
+            )}
           </Carousel>
           <Chart />
         </>

@@ -1,5 +1,4 @@
 const userReducer = (state = { all: [], days: [] }, action) => {
-  // eslint-disable-next-line
   switch (action.type) {
     case "FETCH":
       return {
@@ -15,6 +14,7 @@ const userReducer = (state = { all: [], days: [] }, action) => {
         DayData: action.payload,
         unit: action.unit,
       }
+    // no default
   }
 }
 
